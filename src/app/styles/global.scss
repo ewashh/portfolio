@@ -1,0 +1,144 @@
+@import 'vars.scss';
+
+* {
+  transition: text-decoration-color .5s ease-in-out,
+              background-color .5s ease-in-out,
+              color .5s ease-in-out;
+}
+
+body {
+  margin: 0;
+  background-color: $background-color;
+  color: $foreground-color;
+  font-family: $body-font;
+  font-size: 18px;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+  @extend %heading;
+}
+
+h1 {
+  font-size: $huge-font-size;
+
+  @media #{$mobile} {
+    font-size: 18vw;
+  }
+}
+
+h2 {
+  font-size: $x-large-font-size;
+
+  @media #{$mobile} {
+    font-size: $mobile-x-large-font-size;
+  }
+}
+
+h3 {
+  font-size: $large-font-size;
+  margin-bottom: $spacing;
+
+  @media #{$mobile} {
+    font-size: $mobile-large-font-size;
+  }
+}
+
+p {
+  margin: 0 auto;
+
+  @media #{$desktop} {
+    max-width: 50vw;
+  }
+}
+
+small {
+  @extend %subheading;
+}
+
+img {
+  max-width: 100%;
+  height: auto
+}
+
+@media #{$mobile} {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition-property: opacity, transform;
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out;
+
+  &-2 {
+      transition-delay: .25s;
+  }
+
+  &-3 {
+      transition-delay: .5s;
+  }
+
+  &-4 {
+      transition-delay: .75s;
+  }
+
+  &-5 {
+      transition-delay: 1s;
+  }
+}
+
+.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+//Sections
+
+#big-brands {
+  h2 {
+    span {
+      font-size: $large-font-size;
+      display: block;
+      margin-top: .25em;
+    }
+  }
+}
+
+#takeout {
+  ul {
+    li {
+      $width: 25rem;
+
+      @media #{$desktop} {
+        width: $width;
+      }
+
+      @include generate-media-query(2, $width);
+      @include generate-media-query(3, $width);
+      @include generate-media-query(4, $width);
+      @include generate-media-query(5, $width);
+    }
+  }
+}
+
+#wordpress {
+  ul {
+    max-width: 1280px;
+    display: flex;
+
+    @media #{$desktop} {
+      li {
+        width: 50%;
+    
+        &:last-of-type {
+          border-left: 0;
+          margin-left: calc($border-width * -1);
+        }
+      }
+    }
+  }
+}

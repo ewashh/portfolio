@@ -1,0 +1,62 @@
+@import './../../styles/vars.scss';
+
+.main-nav {
+  ul {
+    display: flex;
+    border-bottom: $border;
+    padding: 0 $spacing;
+    margin: 0;
+
+    @media #{$mobile} {
+      justify-content: center;
+    }
+
+    @media #{$desktop} {
+      justify-content: space-between;
+    }
+
+    li {
+      list-style-type: none;
+      padding: $spacing;
+
+      a {
+        color: $foreground-color;
+        text-decoration-color: transparent;
+        text-underline-offset: 3px;
+
+        &:hover {
+          text-decoration-color: $foreground-color;
+        }
+      }
+    }
+
+    div {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 1rem;
+    }
+  }
+}
+
+.main-header {
+  @media #{$mobile} {
+    min-height: 100vh;
+    display: grid;
+  }
+
+  &__inner {
+    padding: calc($section-padding * 2) $section-padding;
+
+    @media #{$mobile} {
+      padding: calc($section-padding * 2) $section-padding/2;
+    }
+  }
+
+  p {
+    @extend %big-p;
+
+    &:not(:last-child) {
+      margin-bottom: calc($spacing * 2);
+    }
+  }
+}

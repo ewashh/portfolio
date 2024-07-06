@@ -1,0 +1,111 @@
+@import './../../styles/vars.scss';
+
+.section {
+  padding: calc($section-padding * 2) $section-padding;
+  border-bottom: $border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media #{$mobile} {
+    padding: calc($section-padding * 2) $section-padding/2;
+  }
+
+  & > header:not(:last-child) {
+    margin-bottom: calc($spacing * 4);
+  }
+
+  &__heading {
+    margin-bottom: calc($spacing * 2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__description:not(:last-child) {
+    margin-bottom: calc($spacing * 2);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      list-style-type: none;
+      border: $border;
+      @extend %subheading;
+      padding: calc($spacing * 2);
+      margin-bottom: 0;
+      display: inline-flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    &:not(.section__list) li {
+      @media #{$mobile} {   
+        &:nth-of-type(n+2) {
+          border-top: 0;
+          margin-top: calc($border-width * -1);
+        }
+      }
+    }
+
+    &.section__list li {
+      @media #{$mobile} {
+        width: 50%;
+
+        &:not(:nth-of-type(1)):not(:nth-of-type(2)) {
+          border-top: 0;
+        }
+
+        &:nth-of-type(even) {
+          border-left: 0;
+        }
+      }
+
+      @media #{$desktop} {
+        width: 12rem;
+      }
+
+      // Generate media queries for column counts
+      @include generate-media-query(5, 12rem);
+      @include generate-media-query(6, 12rem);
+      @include generate-media-query(7, 12rem);
+      @include generate-media-query(8, 12rem);
+      @include generate-media-query(9, 12rem);
+      @include generate-media-query(10, 12rem);
+      @include generate-media-query(11, 12rem);
+      @include generate-media-query(12, 12rem);
+    }
+  }
+
+  iframe {
+    width: 100%;
+    height: 80vh;
+    border: 0;
+    opacity: .85;
+  }
+
+  video, img {
+    margin-bottom: calc($spacing * 2);
+  }
+
+  a {
+    color: $foreground-color;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
+
+    &:hover {
+      text-decoration-color: $foreground-color;
+    }
+  }
+}

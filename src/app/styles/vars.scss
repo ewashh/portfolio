@@ -1,0 +1,89 @@
+// Vars
+
+$white: #fdf9f1;
+$black: #161616;
+$spacing: 1rem;
+$section-padding: calc($spacing * 4);
+$foreground-color: $white;
+$background-color: $black;
+$border-width: 1px;
+$border: mix($foreground-color, $background-color, 25%) $border-width solid;
+
+$mobile: "(max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+$large-desktop: "(min-width: 1280px)";
+
+// Typography
+
+@font-face {
+  font-family: Absans;
+  src: url(./../fonts/Absans-Regular.woff);
+}
+
+@font-face {
+  font-family: 'Ribes Light';
+  src: url(./../fonts/Ribes-Light.woff);
+}
+
+@font-face {
+  font-family: 'Ribes';
+  src: url(./../fonts/Ribes-Regular.woff);
+}
+
+$small-font-size: .9rem;
+$regular-font-size: 18px;
+$bigger-font-size: 2rem;
+$large-font-size: 3rem;
+$x-large-font-size: 6rem;
+$huge-font-size: 10vw;
+
+$mobile-large-font-size: 1.5rem;
+$mobile-x-large-font-size: 3rem;
+
+$body-font: 'Absans';
+$heading-font: 'Ribes';
+$subheading-font: 'Ribes Light';
+
+%big-p, .big-p {
+  color: rgba($white, .9);
+
+  @media #{$desktop} {
+    .desktop-only {
+      font-size: $bigger-font-size;
+      font-family: $subheading-font;
+    }
+  }
+}
+
+%heading {
+  font-family: $heading-font;
+  font-weight: 500;
+  line-height: .9;
+  margin-top: 0;
+  margin-bottom: $section-padding;
+
+  @media #{$mobile} {
+    margin-bottom: calc($section-padding/2);
+  }
+}
+
+%subheading, .subheading {
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: $spacing;
+  font-size: $small-font-size;
+}
+
+@mixin generate-media-query($columns, $item-width) {
+  @media (min-width: calc(#{$section-padding * 2} + $item-width * #{$columns})) and (max-width: calc((#{$section-padding * 2} + $item-width * #{$columns + 1}) - 1px)) {
+    &:nth-of-type(n + #{$columns + 1}) {
+      border-top: 0;
+      margin-top: calc($border-width * -1);
+    }
+
+    &:not(:nth-of-type(#{$columns}n)):not(:last-of-type) {
+      border-right: 0;
+      margin-right: calc($border-width * -1);
+    }
+  }
+}

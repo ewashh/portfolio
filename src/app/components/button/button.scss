@@ -1,0 +1,26 @@
+@import './../../styles/vars.scss';
+
+.button {
+  @extend %subheading;
+  border: $border;
+  padding: $spacing calc($spacing * 2);
+  background-color: $background-color;
+  color: $foreground-color;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 10rem;
+  transition: background-color .5s ease-in-out;
+
+  &:hover {
+    background-color: $foreground-color;
+    color: $background-color;
+  }
+
+  &--big {
+    width: 100%;
+    max-width: 15rem;
+    text-transform: none;
+    font-size: $regular-font-size;
+    font-family: $subheading-font;
+  }
+}
