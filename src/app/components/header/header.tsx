@@ -8,7 +8,7 @@ export default function Header() {
       <nav className="main-nav">
         <ul>
           <div>
-            <li><a href="" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/ewa-szymanska-858828114/" target="_blank">LinkedIn</a></li>
             <li><a href="https://github.com/ewashh" target="_blank">GitHub</a></li>
           </div>
           <li className="desktop-only"><a href="mailto:ewafreelancer@gmail.com">ewafreelancer@gmail.com</a></li>
