@@ -117,15 +117,18 @@ export default function Home() {
       >
         <ul>
           <li>
-            <video autoPlay loop muted width="100%">
-              <source src="/dominopublishing.webm" type="video/webm" />
-            </video>
+            <Image
+              src="/domino-publishing.png"
+              width={1200}
+              height={649}
+              alt="Domino publishing preview"
+            />
             <h3>Domino Publishing</h3>
             <a href="https://dominopublishingco.com/" target="_blank">Visit website</a>
           </li>
           <li>
             <video autoPlay loop muted width="100%">
-              <source src="/doublesixrights.webm" type="video/webm" />
+              <source src="/doublesixrights-optimised.webm" type="video/webm" />
             </video>
             <h3>Double Six Rights</h3>
             <a href="https://www.doublesixrights.com/" target="_blank">Visit website</a>
