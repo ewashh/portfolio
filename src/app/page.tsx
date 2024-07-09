@@ -26,7 +26,7 @@ export default function Home() {
           my professional growth and the success of my
           projects."
         items={[
-          "HTML", "SCSS", "JavaScript", "React", "Next.js", "Gatsby", "Git", 
+          "HTML", "SCSS", "JavaScript", "TypeScript", "React", "Next.js", "Gatsby", "Jest", "Git", "Npm", "Yarn", 
           "Storybook", "Shopify", "Liquid", "Contentful", "Wordpress", "Figma"
         ]}>
       </Section>
