@@ -31,6 +31,37 @@ export default function Home() {
         ]}>
       </Section>
       <Section
+        id="superrb"
+        type="work"
+        subheading="Featured work"
+        heading="Shopify Stores"
+        description="Stores I’ve worked on in collaboration with Superrb. My job was to convert Figma designs into Shopify themes."
+      >
+        <ul>
+          <li>
+            <a href="https://rioteliquid.com/" target="_blank">
+              <video autoPlay loop muted width="100%">
+                <source src="/riot.webm" type="video/webm" />
+              </video>
+            </a>
+            <h3>Riot E-liquid</h3>
+            <a href="https://rioteliquid.com/" target="_blank">Visit website</a>
+          </li>
+          <li>
+            <a href="https://mozzocoffee.com/" target="_blank">
+              <Image
+                src="/mozzo.png"
+                width={1248}
+                height={704}
+                alt="Mozzo Coffee preview"
+              />
+            </a>
+            <h3>Mozzo Coffee</h3>
+            <a href="https://mozzocoffee.com/" target="_blank">Visit website</a>
+          </li>
+        </ul>
+      </Section>
+      <Section
         id="takeout"
         subheading="Featured work"
         heading="Takeout"
@@ -43,52 +74,62 @@ export default function Home() {
       >
         <ul>
           <li>
-            <Image
-              src="/crumbs.png"
-              width={292}
-              height={158}
-              alt="Crumbs preview"
-            />
+            <a href="https://crumbs-demo.myshopify.com/" target="_blank">
+              <Image
+                src="/crumbs.png"
+                width={292}
+                height={158}
+                alt="Crumbs preview"
+              />
+            </a>
             <h3>Crumbs</h3>
             <a href="https://crumbs-demo.myshopify.com/" target="_blank">Visit demo store</a>
           </li>
           <li>
-            <Image
-              src="/macho-nacho.png"
-              width={292}
-              height={158}
-              alt="Macho Nacho preview"
-            />
+            <a href="https://macho-nacho-demo.myshopify.com/" target="_blank">
+              <Image
+                src="/macho-nacho.png"
+                width={292}
+                height={158}
+                alt="Macho Nacho preview"
+              />
+            </a>
             <h3>Macho Nacho</h3>
             <a href="https://macho-nacho-demo.myshopify.com/" target="_blank">Visit demo store</a>
           </li>
           <li>
-            <Image
-              src="/naughty-vegan.png"
-              width={292}
-              height={158}
-              alt="Naughty Vegan preview"
-            />
+            <a href="https://naughty-vegan-demo.myshopify.com/" target="_blank">
+              <Image
+                src="/naughty-vegan.png"
+                width={292}
+                height={158}
+                alt="Naughty Vegan preview"
+              />
+            </a>
             <h3>Naughty Vegan</h3>
             <a href="https://naughty-vegan-demo.myshopify.com/" target="_blank">Visit demo store</a>
           </li>
           <li>
-            <Image
-              src="/casa-italiana.png"
-              width={292}
-              height={158}
-              alt="Casa Italiana preview"
-            />
+            <a href="https://casa-italiana-demo.myshopify.com/" target="_blank">
+              <Image
+                src="/casa-italiana.png"
+                width={292}
+                height={158}
+                alt="Casa Italiana preview"
+              />
+            </a>
             <h3>Casa Italiana</h3>
             <a href="https://casa-italiana-demo.myshopify.com/" target="_blank">Visit demo store</a>
           </li>
           <li>
-            <Image
-              src="/wasabi.png"
-              width={292}
-              height={158}
-              alt="Wasabi preview"
-            />
+            <a href="https://wasabi-demo.myshopify.com/" target="_blank">
+              <Image
+                src="/wasabi.png"
+                width={292}
+                height={158}
+                alt="Wasabi preview"
+              />
+            </a>
             <h3>Wasabi</h3>
             <a href="https://wasabi-demo.myshopify.com/" target="_blank">Visit demo store</a>
           </li>
@@ -117,19 +158,23 @@ export default function Home() {
       >
         <ul>
           <li>
-            <Image
-              src="/domino-publishing.png"
-              width={1200}
-              height={649}
-              alt="Domino publishing preview"
-            />
+            <a href="https://dominopublishingco.com/" target="_blank">
+              <Image
+                src="/domino-publishing.png"
+                width={1200}
+                height={649}
+                alt="Domino publishing preview"
+              />
+            </a>
             <h3>Domino Publishing</h3>
             <a href="https://dominopublishingco.com/" target="_blank">Visit website</a>
           </li>
           <li>
-            <video autoPlay loop muted width="100%">
-              <source src="/doublesixrights-optimised.webm" type="video/webm" />
-            </video>
+            <a href="https://www.doublesixrights.com/" target="_blank">
+              <video autoPlay loop muted width="100%">
+                <source src="/doublesixrights-optimised.webm" type="video/webm" />
+              </video>
+            </a>
             <h3>Double Six Rights</h3>
             <a href="https://www.doublesixrights.com/" target="_blank">Visit website</a>
           </li>

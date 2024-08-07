@@ -55,6 +55,10 @@
   p {
     @extend %big-p;
 
+    &:first-of-type {
+      margin-top: calc($spacing * 3.5);
+    }
+
     &:not(:last-child) {
       margin-bottom: calc($spacing * 2);
     }

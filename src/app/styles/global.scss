@@ -65,6 +65,19 @@ img, video, iframe {
   border: mix($foreground-color, $background-color, 10%) $border-width solid;
 }
 
+.video-wrapper {
+  padding: $section-padding;
+  border: $border;
+
+  @media #{$mobile} {
+    padding: $section-padding/2;
+  }
+
+  video {
+    margin-bottom: 0 !important;
+  }
+}
+
 @media #{$mobile} {
   .desktop-only {
     display: none !important;
@@ -112,7 +125,32 @@ img, video, iframe {
   }
 }
 
+#superrb {
+  ul {
+    li {
+      width: 100%;
+
+      &:not(:last-of-type) {
+        border-bottom: 0;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
 #takeout {
+  .video-wrapper {
+    margin: 0 auto;
+    margin-bottom: $section-padding;
+
+    @media #{$desktop} {
+      width: 75%;
+    }
+  }
+
   ul {
     li {
       $width: 25rem;

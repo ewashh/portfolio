@@ -11,6 +11,7 @@ type SectionProps = {
   heading: string;
   headingType?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   description?: string;
+  subtext?: string;
   items?: string[];
   children?: React.ReactNode;
   type?: 'work';
@@ -39,6 +40,7 @@ export default function Section({
   heading,
   headingType = 'h2',
   description,
+  subtext,
   items,
   children,
   type,
@@ -52,6 +54,7 @@ export default function Section({
         {subheading && <span className="subheading">{subheading}</span>}
         {heading && <DynamicHeading type={headingType} className="section__heading">{heading}</DynamicHeading>}
         {description && <p className="section__description">{description}</p>}
+        {subtext && <p className="section__subtext">{subtext}</p>}
         {button && button.text && button.href && <Button text={button.text} hoverText={button.hoverText} href={button.href} type={button.type} />}
       </header>
 

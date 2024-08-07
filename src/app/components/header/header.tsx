@@ -20,6 +20,7 @@ export default function Header() {
         description="I’m a front-end developer and UI designer with over a decade
         of professional experience ranging from small, digital agencies
         to big software companies."
+        subtext="📍 Southampton, UK"
         button={{
           text: 'Say Hello!',
           hoverText: 'ewafreelancer@gmail.com',
