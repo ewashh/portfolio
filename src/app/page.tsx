@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import Section from './components/section/section';
+import Button from './components/button/button';
 
 export default function Home() {
   return (
@@ -29,6 +30,52 @@ export default function Home() {
           "HTML", "SCSS", "JavaScript", "TypeScript", "React", "Next.js", "Gatsby", "Jest", "Git", "Npm", "Yarn", 
           "Storybook", "Shopify", "Liquid", "Contentful", "Wordpress", "Figma"
         ]}>
+      </Section>
+      <Section
+        type="work"
+        subheading="Featured work"
+        heading="DOT STUDIO"
+        description="A Next.js website I designed and developed for DOT STUDIO."
+        button={{
+          text: 'Visit Website',
+          hoverText: 'dotstudio.uk',
+          href: 'https://dotstudio.uk/'
+        }}
+      >
+        <a href="https://dotstudio.uk/" target="_blank">
+          <Image
+            src="/dotstudio.png"
+            width={1248}
+            height={704}
+            alt="Dot Studio preview"
+          />
+        </a>
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+        <h3>COMPONENT LIBRARY</h3>
+        <p className="section__description">A React-based component library I developed for DOT STUDIO.</p>
+        <Button text="Visit Storybook" hoverText="dotstudio.uk/storybook" href="https://dotstudio.uk/storybook" />
+        <br/><br/><br/>
+        <iframe src="https://dotstudio.uk/storybook/"></iframe>
+      </Section>
+      <Section
+        type="work"
+        subheading="Featured work"
+        heading="ECOM NOON"
+        description="A Gatsby website I designed and developed for Ecom Noon."
+        button={{
+          text: 'Visit Website',
+          hoverText: 'ecomnoon.com',
+          href: 'https://ecomnoon.com/'
+        }}
+      >
+        <a href="https://ecomnoon.com/" target="_blank">
+          <Image
+            src="/ecomnoon.png"
+            width={1248}
+            height={704}
+            alt="Ecom Noon preview"
+          />
+        </a>
       </Section>
       <Section
         id="superrb"
@@ -134,20 +181,6 @@ export default function Home() {
             <a href="https://wasabi-demo.myshopify.com/" target="_blank">Visit demo store</a>
           </li>
         </ul>
-      </Section>
-      <Section
-        id="birch"
-        type="work"
-        subheading="Featured work"
-        heading="Birch"
-        description="A React-based component library I developed for Baresquare."
-        button={{
-          text: 'Visit Storybook',
-          hoverText: 'birch.baresquare.com',
-          href: 'https://birch.baresquare.com/'
-        }}
-      >
-        <iframe src="https://birch.baresquare.com/"></iframe>
       </Section>
       <Section
         id="wordpress"
