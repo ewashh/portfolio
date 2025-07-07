@@ -1,11 +1,29 @@
 // Vars
 
-$white: #fdf9f1;
-$black: #161616;
+$white: #ffffff;
+$black: #0F0F0F;
+
+$violet: #ACC0FD;
+$orange: #E0764D;
+$green: #64B96A;
+$light: #E1E3DE;
+$dark: $black;
+$lighter: rgba($light, 25%);
+
+$font-color: $dark;
+$p-color: rgba($dark, 0.95);
+$link-color: $orange;
+
+$border-radius: 2rem;
+$border-width: 1px;
+$border-color: rgba($dark, 0.1);
+
+$button-border-radius: calc($border-radius/8);
+
 $spacing: 1rem;
 $section-padding: calc($spacing * 4);
-$foreground-color: $white;
-$background-color: $black;
+$foreground-color: $black;
+$background-color: $white;
 $border-width: 1px;
 $border: mix($foreground-color, $background-color, 25%) $border-width solid;
 
@@ -30,23 +48,34 @@ $large-desktop: "(min-width: 1280px)";
   src: url(./../fonts/Ribes-Regular.woff);
 }
 
+@font-face {
+  font-family: 'Thin';
+  src: url('./../fonts/ApfelGrotezk-Regular.woff2') format('woff2'),
+    url('./../fonts/ApfelGrotezk-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url('./../fonts/ApfelGrotezk-Mittel.woff2') format('woff2'),
+    url('./../fonts/ApfelGrotezk-Mittel.woff') format('woff');
+}
+
 $small-font-size: .9rem;
 $regular-font-size: 18px;
 $bigger-font-size: 2rem;
 $large-font-size: 3rem;
 $x-large-font-size: 6rem;
-$huge-font-size: 10vw;
+$huge-font-size: 9vw;
 
 $mobile-large-font-size: 1.5rem;
 $mobile-x-large-font-size: 3rem;
 
-$body-font: 'Absans';
-$heading-font: 'Ribes';
-$subheading-font: 'Ribes Light';
+$body-font: 'Thin';
+$heading-font: 'Regular';
+$subheading-font: 'Regular';
 
-%big-p, .big-p {
-  color: rgba($white, .9);
-
+%big-p,
+.big-p {
   @media #{$desktop} {
     .desktop-only {
       font-size: $bigger-font-size;
@@ -61,13 +90,16 @@ $subheading-font: 'Ribes Light';
   line-height: .9;
   margin-top: 0;
   margin-bottom: $section-padding;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
 
   @media #{$mobile} {
     margin-bottom: calc($section-padding/2);
   }
 }
 
-%subheading, .subheading {
+%subheading,
+.subheading {
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: $spacing;

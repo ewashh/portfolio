@@ -2,25 +2,30 @@
 
 * {
   transition: text-decoration-color .5s ease-in-out,
-              background-color .5s ease-in-out,
-              color .5s ease-in-out;
+    background-color .5s ease-in-out,
+    color .5s ease-in-out;
 }
 
 body {
   margin: 0;
   background-color: $background-color;
-  color: $foreground-color;
+  color: $p-color;
   font-family: $body-font;
   font-size: 18px;
   text-align: center;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   @extend %heading;
 }
 
 h1 {
   font-size: $huge-font-size;
+  max-width: 80vw;
 
   @media #{$mobile} {
     font-size: 18vw;
@@ -61,7 +66,9 @@ img {
   height: auto
 }
 
-img, video, iframe {
+img,
+video,
+iframe {
   border: mix($foreground-color, $background-color, 10%) $border-width solid;
 }
 
@@ -92,19 +99,19 @@ img, video, iframe {
   transition-timing-function: ease-in-out;
 
   &-2 {
-      transition-delay: .25s;
+    transition-delay: .25s;
   }
 
   &-3 {
-      transition-delay: .5s;
+    transition-delay: .5s;
   }
 
   &-4 {
-      transition-delay: .75s;
+    transition-delay: .75s;
   }
 
   &-5 {
-      transition-delay: 1s;
+    transition-delay: 1s;
   }
 }
 
@@ -141,47 +148,40 @@ img, video, iframe {
   }
 }
 
-#takeout {
-  .video-wrapper {
-    margin: 0 auto;
-    margin-bottom: $section-padding;
-
-    @media #{$desktop} {
-      width: 75%;
+#demo-stores,
+#ecom-noon,
+#dot-studio {
+  @media #{$desktop} {
+    img {
+      width: 80vw;
     }
   }
+}
 
+#takeout {
   ul {
-    li {
-      $width: 25rem;
+    justify-content: normal;
+  }
 
-      @media #{$desktop} {
-        width: $width;
-      }
-
-      @include generate-media-query(2, $width);
-      @include generate-media-query(3, $width);
-      @include generate-media-query(4, $width);
-      @include generate-media-query(5, $width);
-    }
+  li,
+  li a,
+  li img {
+    width: 100%;
   }
 }
 
 #wordpress {
   ul {
-    max-width: 1280px;
-    display: flex;
-
     @media #{$desktop} {
-      margin: 0 auto;
-      
-      li {
-        width: 50%;
-    
-        &:last-of-type {
-          border-left: 0;
-          margin-left: calc($border-width * -1);
-        }
+      grid-template-columns: 1fr 1fr;
+    }
+
+    li {
+
+      a,
+      video,
+      img {
+        width: 100%;
       }
     }
   }

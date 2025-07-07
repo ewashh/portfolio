@@ -2,4 +2,13 @@
 
 .main-footer {
   padding: $spacing;
+  background-color: $foreground-color;
+  color: $background-color;
+  min-height: 80vh;
+  display: grid;
+  grid-template-rows: auto 1.5rem;
+
+  h2 {
+    font-family: 'Thin';
+  }
 }

@@ -1,9 +1,10 @@
 @import './../../styles/vars.scss';
 
 .main-nav {
+  background-color: $foreground-color;
+
   ul {
     display: flex;
-    border-bottom: $border;
     padding: 0 $spacing;
     margin: 0;
 
@@ -20,12 +21,12 @@
       padding: $spacing;
 
       a {
-        color: $foreground-color;
+        color: $background-color;
         text-decoration-color: transparent;
         text-underline-offset: 3px;
 
         &:hover {
-          text-decoration-color: $foreground-color;
+          text-decoration-color: $background-color;
         }
       }
     }
@@ -39,10 +40,8 @@
 }
 
 .main-header {
-  @media #{$mobile} {
-    min-height: 100vh;
-    display: grid;
-  }
+  min-height: 100vh;
+  display: grid;
 
   &__inner {
     padding: calc($section-padding * 2) $section-padding;
@@ -61,6 +60,23 @@
 
     &:not(:last-child) {
       margin-bottom: calc($spacing * 2);
+    }
+  }
+
+  h1 {
+    font-family: 'Thin';
+    max-width: 5em;
+    justify-self: center;
+    margin-top: calc($spacing * -5);
+
+    span {
+      font-size: 0.6em;
+      display: block;
+      transform: rotate(3deg);
+      letter-spacing: 0;
+      color: $violet;
+      width: min-content;
+      margin: -.1em auto -.125em auto;
     }
   }
 }

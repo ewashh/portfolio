@@ -1,26 +1,56 @@
 @import './../../styles/vars.scss';
 
+@keyframes fadeIn {
+  0% {
+    color: transparent;
+  }
+
+  100% {
+    color: $dark;
+  }
+}
+
 .button {
-  @extend %subheading;
-  border: $border;
-  padding: $spacing calc($spacing * 2);
-  background-color: $background-color;
-  color: $foreground-color;
-  display: inline-block;
+  background-color: transparent;
+  color: $font-color;
+  text-transform: uppercase;
+  font-size: $regular-font-size;
+  padding: .45em 1em .45em 1em;
+  border: calc($border-width * 2) solid $violet;
+  border-radius: $button-border-radius;
   text-decoration: none;
-  border-radius: 10rem;
-  transition: background-color .5s ease-in-out;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  font-family: 'Thin', sans-serif;
+  min-width: 14em;
+  transition: background-color .5s ease-in-out,
+    border-color .5s ease-in-out,
+    color .5s ease-in-out,
+    border-radius .5s ease-in-out,
+    text-decoration-color .5s ease-in-out;
 
   &:hover {
-    background-color: $foreground-color;
-    color: $background-color;
+    cursor: pointer;
+    border-radius: $border-radius;
+  }
+
+  &--hover-text {
+    &:hover {
+      animation: fadeIn .5s forwards;
+    }
   }
 
   &--big {
-    width: 100%;
-    max-width: 15rem;
-    text-transform: none;
-    font-size: $regular-font-size;
-    font-family: $subheading-font;
+    @media #{$desktop} {
+      font-size: calc($regular-font-size * 1.25);
+      padding: .6em 1.2em .6em 1.2em;
+      line-height: 1.2;
+    }
+  }
+
+  &--primary {
+    background-color: $violet;
+    color: $dark;
   }
 }

@@ -3,7 +3,7 @@ import "@/app/styles/global.scss";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
-  title: "Portfolio - Ewa Szymanska",
+  title: "Portfolio - Ewa Morriss",
   description: "I’m a front-end developer and UI designer with over a decade of professional experience ranging from small, digital agencies to big software companies.",
 };
 

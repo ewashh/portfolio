@@ -8,7 +8,7 @@ type SectionProps = {
   id?: string;
   classes?: string;
   subheading?: string;
-  heading: string;
+  heading?: string;
   headingType?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   description?: string;
   subtext?: string;
@@ -19,8 +19,10 @@ type SectionProps = {
     text: string;
     hoverText?: string;
     href?: string;
-    type?: 'big'
+    type?: 'big',
+    style?: 'primary' | 'secondary'
   };
+  theme?: 'light' | 'grey' | 'dark';
 };
 
 type DynamicHeadingProps = {
@@ -44,18 +46,19 @@ export default function Section({
   items,
   children,
   type,
-  button
+  button,
+  theme = 'light',
 }: SectionProps) {
   const [isVisible, elementRef] = useAnimateOnScroll();
 
   return (
-    <section className={`section ${type ? `section--${type}` : ''} ${classes ? classes : ''}`} id={id}>
+    <section className={`section ${type ? `section--${type}` : ''} ${classes ? classes : ''} theme--${theme}`} id={id}>
       <header className={`animate ${isVisible ? 'animated' : ''}`} ref={elementRef}>
         {subheading && <span className="subheading">{subheading}</span>}
         {heading && <DynamicHeading type={headingType} className="section__heading">{heading}</DynamicHeading>}
         {description && <p className="section__description">{description}</p>}
         {subtext && <p className="section__subtext">{subtext}</p>}
-        {button && button.text && button.href && <Button text={button.text} hoverText={button.hoverText} href={button.href} type={button.type} />}
+        {button && button.text && button.href && <Button text={button.text} hoverText={button.hoverText} href={button.href} type={button.type} style={button.style} />}
       </header>
 
       {items && (
