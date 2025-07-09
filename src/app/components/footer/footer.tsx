@@ -19,7 +19,7 @@ export default function Footer() {
       >
       </Section>
       <footer>
-        <small>© {(new Date().getFullYear())}, Ewa Morriss</small>
+        <small>© 2024 - {(new Date().getFullYear())}, Ewa Morriss</small>
       </footer>
     </div>
   );
