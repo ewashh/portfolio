@@ -11,13 +11,22 @@ export default function Home() {
     <Header/>
     <main>
       <Section
+        id="about"
+        heading="About"
+      >
+        <p className="section__description">I’m a front-end developer and UI designer with over a decade of professional experience ranging from small, digital agencies to big software companies. Over the past few years, I’ve been focusing on Shopify since becoming an official theme partner, with my first theme accepted into the official Shopify Theme Store.</p>
+        <p className="section__subtext">📍 Southampton, UK</p>
+      </Section>
+      <Section
         id="big-brands"
         subheading="I've worked with"
         heading="Big Brands"
         items={[
           "BBC", "John Lewis", "Barclaycard", "Expedia", 
           "Topshop", "River Island", "New Look", "Yodel"
-        ]}>
+        ]}
+        theme="grey"
+      >
       </Section>
       <Section
         id="tech"
@@ -27,10 +36,33 @@ export default function Home() {
           my professional growth and the success of my
           projects."
         items={[
-          "HTML", "SCSS", "JavaScript", "TypeScript", "React", "Next.js", "Gatsby", "Jest", "Git", "Npm", "Yarn", 
+          "HTML", "SCSS", "Tailwind CSS", "JavaScript", "TypeScript", "React", "Next.js", "Gatsby", "Jest", "Git", "Npm", "Yarn", 
           "Storybook", "Shopify", "Liquid", "Contentful", "Wordpress", "Figma"
         ]}
-        theme="grey">
+      >
+      </Section>
+      <Section
+        id="no-plans"
+        type="work"
+        subheading="Featured work &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shopify Plus"
+        heading="Shopify Store"
+        description="Store I’ve worked on in collaboration with No Plans. My job was to convert Figma designs into a Shopify theme."
+        theme="grey"
+      >
+        <ul>
+          <li>
+            <a href="https://about---blank.com/" target="_blank">
+              <Image
+                src="/about-blank.png"
+                width={1248}
+                height={704}
+                alt="about:blank preview"
+              />
+            </a>
+            <h3>about:blank</h3>
+            <a href="https://about---blank.com/" target="_blank">Visit website</a>
+          </li>
+        </ul>
       </Section>
       <Section
         id="takeout"
@@ -59,10 +91,10 @@ export default function Home() {
       <Section
         id="demo-stores"
         type="work"
-        theme="grey"
         subheading="Featured work"
         heading="Shopify Stores"
         description="Demo stores for Takeout theme. Fully designed and developed by me. "
+        theme="grey"
       >
         <ul>
           <li>
@@ -185,7 +217,6 @@ export default function Home() {
       <Section
         id="ecom-noon"
         type="work"
-        theme="grey"
         subheading="Featured work"
         heading="ECOM NOON"
         description="A Next.js website I designed and developed for Ecom Noon."
@@ -194,6 +225,7 @@ export default function Home() {
           hoverText: 'ecomnoon.com',
           href: 'https://ecomnoon.com/'
         }}
+        theme="grey"
       >
         <a href="https://ecomnoon.com/" target="_blank">
           <Image
@@ -233,11 +265,11 @@ export default function Home() {
       </Section>
       <Section
         id="wordpress"
-        theme="grey"
         type="work"
         subheading="Featured work"
         heading="Wordpress"
         description="Websites I’ve worked on while at Chaptr."
+        theme="grey"
       >
         <ul>
           <li>

@@ -20,8 +20,7 @@ export default function Header() {
         theme="dark"
       >
         <h1 className="section__heading">Developer <br/>Meets Designer</h1>
-        <p className="section__description">I’m a front-end developer and UI designer with over a decade of professional experience ranging from small, digital agencies to big software companies. Over the past few years, I’ve been focusing on Shopify since becoming an official theme partner, with my first theme accepted into the official Shopify Theme Store.</p>
-        <p className="section__subtext">📍 Southampton, UK</p>
+        <br/><br/>
         <Button text='Say Hello!' hoverText='ewafreelancer@gmail.com' style="primary" href="mailto:ewafreelancer@gmail.com" type="big" />
       </Section>
     </header>

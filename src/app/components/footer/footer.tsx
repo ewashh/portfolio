@@ -6,8 +6,7 @@ export default function Footer() {
     <div className="main-footer">
       <Section
         heading="Like What You See?"
-        description="I am open to project-based or ad-hoc arrangements, offering you flexibility to meet your
-        evolving needs."
+        description="I'm available for project-based or ad-hoc arrangements."
         button={{
           text: "Let's work together!",
           hoverText: 'ewafreelancer@gmail.com',
