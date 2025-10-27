@@ -1,7 +1,6 @@
 'use client';
 import '@/app/components/header/header.scss';
 import Section from '../section/section';
-import Button from '../button/button';
 
 export default function Header() {
   return (
@@ -19,9 +18,13 @@ export default function Header() {
         classes="main-header__inner"
         theme="dark"
       >
-        <h1 className="section__heading">Developer <br/>Meets Designer</h1>
-        <br/><br/>
-        <Button text='Say Hello!' hoverText='ewafreelancer@gmail.com' style="primary" href="mailto:ewafreelancer@gmail.com" type="big" />
+        <div className="main-header__img" style={{backgroundImage: 'url(/headshot.jpg)'}}>
+          <div className='main-header__img-caption'>
+            <span>Ewa Morriss</span>
+            <span>[eh·vuh]</span>
+          </div>
+        </div>
+        <h1 className="section__heading">Developer <br/>Meets <br/>Designer</h1>
       </Section>
     </header>
   );

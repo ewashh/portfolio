@@ -8,7 +8,7 @@ export default function Footer() {
         heading="Like What You See?"
         description="I'm available for project-based or ad-hoc arrangements."
         button={{
-          text: "Let's work together!",
+          text: "Get in touch",
           hoverText: 'ewafreelancer@gmail.com',
           href: 'mailto:ewafreelancer@gmail.com',
           type: 'big',
@@ -18,7 +18,13 @@ export default function Footer() {
       >
       </Section>
       <footer>
-        <small>© 2024 - {(new Date().getFullYear())}, Ewa Morriss</small>
+        <div>
+          <span className='mobile-block'>Work with me via:</span>
+          <span><a href="https://ecomnoon.com" target="_blank">Ecom Noon</a>,</span>
+          <span><a href="https://www.storetasker.com/experts/ewa-morriss" target="_blank">Storetasker</a>,</span>
+          <span><a href="https://www.upwork.com/freelancers/ewam5" target="_blank">Upwork</a></span>
+        </div>
+        <span>© 2024 - {(new Date().getFullYear())}, Ewa Morriss</span>
       </footer>
     </div>
   );

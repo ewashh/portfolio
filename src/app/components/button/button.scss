@@ -14,25 +14,30 @@
   background-color: transparent;
   color: $font-color;
   text-transform: uppercase;
+  min-height: 2.7rem;
+  padding: .45em 1em;
+  box-sizing: border-box;
   font-size: $regular-font-size;
-  padding: .45em 1em .45em 1em;
+  line-height: 1;
   border: calc($border-width * 2) solid $violet;
   border-radius: $button-border-radius;
   text-decoration: none;
   text-align: center;
-  display: inline-flex;
+  display: inline-flex !important;
   justify-content: center;
-  font-family: 'Thin', sans-serif;
-  min-width: 14em;
+  align-items: center;
+  font-family: $mono-font-family;
+  min-width: $spacing * 10;
+  white-space: nowrap;
   transition: background-color .5s ease-in-out,
     border-color .5s ease-in-out,
     color .5s ease-in-out,
     border-radius .5s ease-in-out,
     text-decoration-color .5s ease-in-out;
 
-  &:hover {
+  &:not(.button--disabled):hover {
     cursor: pointer;
-    border-radius: $border-radius;
+    border-radius: calc($button-border-radius * 10);
   }
 
   &--hover-text {

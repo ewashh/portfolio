@@ -4,6 +4,7 @@ import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import Section from './components/section/section';
 import Button from './components/button/button';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -12,10 +13,15 @@ export default function Home() {
     <main>
       <Section
         id="about"
-        heading="About"
       >
-        <p className="section__description">I’m a front-end developer and UI designer with over a decade of professional experience ranging from small, digital agencies to big software companies. Over the past few years, I’ve been focusing on Shopify since becoming an official theme partner, with my first theme accepted into the official Shopify Theme Store.</p>
-        <p className="section__subtext">📍 Southampton, UK</p>
+        <div>
+          <p className="section__description">
+            <span>{`I’m a front-end developer and UI designer with over a decade of professional experience ranging from small, digital agencies to big software companies.`}</span>
+            <br/><br/>
+            <span>📍 Southampton, UK</span>
+          </p>
+        </div>
+        <p className="section__description bigger-font-size">{`Over the past few years, I’ve been focusing on Shopify since becoming a theme partner, with my first theme accepted into the`} <Link href="https://themes.shopify.com/designers/ewa-szymanska" target="_blank">official Shopify Theme Store</Link>.</p>
       </Section>
       <Section
         id="big-brands"
@@ -23,49 +29,35 @@ export default function Home() {
         heading="Big Brands"
         items={[
           "BBC", "John Lewis", "Barclaycard", "Expedia", 
-          "Topshop", "River Island", "New Look", "Yodel"
-        ]}
-        theme="grey"
-      >
-      </Section>
-      <Section
-        id="tech"
-        heading="Technical Expertise"
-        description="Throughout my career, I've used a wide variety of
-          tools and technologies, each playing a crucial role in
-          my professional growth and the success of my
-          projects."
-        items={[
-          "HTML", "SCSS", "Tailwind CSS", "JavaScript", "TypeScript", "React", "Next.js", "Gatsby", "Jest", "Git", "Npm", "Yarn", 
-          "Storybook", "Shopify", "Liquid", "Contentful", "Wordpress", "Figma"
+          "Topshop", "River Island", "New Look", "Yodel", "About:Blank"
         ]}
       >
       </Section>
       <Section
         id="no-plans"
+        layout="1-2"
         type="work"
         subheading="Featured work &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shopify Plus"
-        heading="Shopify Store"
-        description="Store I’ve worked on in collaboration with No Plans. My job was to convert Figma designs into a Shopify theme."
+        heading="About:Blank"
+        description="A Shopify Plus store I’ve worked on in collaboration with No Plans. My job was to convert Figma designs into a Shopify theme."
         theme="grey"
+        button={{
+          text: 'Visit website',
+          href: 'https://about---blank.com/'
+        }}
       >
-        <ul>
-          <li>
-            <a href="https://about---blank.com/" target="_blank">
-              <Image
-                src="/about-blank.png"
-                width={1248}
-                height={704}
-                alt="about:blank preview"
-              />
-            </a>
-            <h3>about:blank</h3>
-            <a href="https://about---blank.com/" target="_blank">Visit website</a>
-          </li>
-        </ul>
+        <a href="https://about---blank.com/" target="_blank">
+          <Image
+            src="/about-blank.png"
+            width={1248}
+            height={704}
+            alt="about:blank preview"
+          />
+        </a>
       </Section>
       <Section
         id="takeout"
+        layout="1-2"
         subheading="Featured work"
         heading="Takeout"
         description="A Shopify theme for physical businesses ready to scale online. Originally designed for restaurants and food sellers, it now supports a broad range of merchants. Fully designed and developed by me."
@@ -90,6 +82,7 @@ export default function Home() {
       </Section>
       <Section
         id="demo-stores"
+        layout="1-1"
         type="work"
         subheading="Featured work"
         heading="Shopify Stores"
@@ -185,13 +178,14 @@ export default function Home() {
       </Section>
       <Section
         id="superrb"
+        layout="1-1"
         type="work"
         subheading="Featured work"
         heading="Shopify Stores"
         description="Stores I’ve worked on in collaboration with Superrb. My job was to convert Figma designs into Shopify themes."
       >
         <ul>
-          <li>
+        <li>
             <a href="https://rioteliquid.com/" target="_blank">
               <video autoPlay loop muted width="100%">
                 <source src="/riot.webm" type="video/webm" />
@@ -216,9 +210,10 @@ export default function Home() {
       </Section>
       <Section
         id="ecom-noon"
+        layout="1-2"
         type="work"
         subheading="Featured work"
-        heading="ECOM NOON"
+        heading="Ecom Noon"
         description="A Next.js website I designed and developed for Ecom Noon."
         button={{
           text: 'Visit Website',
@@ -238,10 +233,11 @@ export default function Home() {
       </Section>
       <Section
         id="dot-studio"
+        layout="1-2"
         type="work"
         subheading="Featured work"
-        heading="DOT STUDIO"
-        description="A Next.js website I designed and developed for DOT STUDIO."
+        heading="Dot Studio"
+        description="A Next.js website I designed and developed for Dot Studio."
         button={{
           text: 'Visit Website',
           hoverText: 'dotstudio.uk',
@@ -256,15 +252,22 @@ export default function Home() {
             alt="Dot Studio preview"
           />
         </a>
-        <br/><br/><br/><br/><br/><br/><br/><br/>
-        <h3>COMPONENT LIBRARY</h3>
-        <p className="section__description">A React-based component library I developed for DOT STUDIO.</p>
-        <Button text="Visit Storybook" hoverText="dotstudio.uk/storybook" href="https://dotstudio.uk/storybook" />
-        <br/><br/><br/>
+      </Section>
+      <Section
+        id="dot-studio"
+        type="work"
+      >
+        <div>
+          <h3>Component Library</h3>
+          <p className="section__description"></p>
+          <Button text="Visit Storybook" hoverText="dotstudio.uk/storybook" href="https://dotstudio.uk/storybook" />
+          <br/><br/><br/><br/>
+        </div>
         <iframe src="https://dotstudio.uk/storybook/"></iframe>
       </Section>
       <Section
         id="wordpress"
+        layout="1-1"
         type="work"
         subheading="Featured work"
         heading="Wordpress"
@@ -294,6 +297,15 @@ export default function Home() {
             <a href="https://www.doublesixrights.com/" target="_blank">Visit website</a>
           </li>
         </ul>
+      </Section>
+      <Section
+        id="tech"
+        heading="Technical Expertise"
+        items={[
+          "HTML", "SCSS", "Tailwind CSS", "JavaScript", "TypeScript", "React", "Next.js", "Gatsby", "Jest", "Git", "Npm", "Yarn", 
+          "Storybook", "Shopify", "Shopify Plus", "Liquid", "Contentful", "Wordpress", "Figma"
+        ]}
+      >
       </Section>
     </main>
     <Footer/>

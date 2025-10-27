@@ -5,6 +5,7 @@ $black: #0F0F0F;
 
 $violet: #ACC0FD;
 $orange: #E0764D;
+$lime: #96FB74;
 $green: #64B96A;
 $light: #E1E3DE;
 $dark: $black;
@@ -14,11 +15,14 @@ $font-color: $dark;
 $p-color: rgba($dark, 0.95);
 $link-color: $orange;
 
-$border-radius: 2rem;
+$border-radius: 0.175rem;
 $border-width: 1px;
 $border-color: rgba($dark, 0.1);
 
-$button-border-radius: calc($border-radius/8);
+$button-border-radius: $border-radius;
+$input-border-radius: $border-radius;
+$input-border-color: rgba($dark, 0.2);
+$input-border-width: 2px;
 
 $spacing: 1rem;
 $section-padding: calc($spacing * 4);
@@ -34,45 +38,41 @@ $large-desktop: "(min-width: 1280px)";
 // Typography
 
 @font-face {
-  font-family: Absans;
-  src: url(./../fonts/Absans-Regular.woff);
-}
-
-@font-face {
-  font-family: 'Ribes Light';
-  src: url(./../fonts/Ribes-Light.woff);
-}
-
-@font-face {
-  font-family: 'Ribes';
-  src: url(./../fonts/Ribes-Regular.woff);
-}
-
-@font-face {
-  font-family: 'Thin';
-  src: url('./../fonts/ApfelGrotezk-Regular.woff2') format('woff2'),
-    url('./../fonts/ApfelGrotezk-Regular.woff') format('woff');
-}
-
-@font-face {
   font-family: 'Regular';
-  src: url('./../fonts/ApfelGrotezk-Mittel.woff2') format('woff2'),
-    url('./../fonts/ApfelGrotezk-Mittel.woff') format('woff');
+  src: url('./../fonts/ResistText-Regular.woff2') format('woff2'),
+    url('./../fonts/ResistText-Regular.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'Medium';
+  src: url('./../fonts/ResistText-Medium.woff2') format('woff2'),
+    url('./../fonts/ResistText-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Mono';
+  src: url('./../fonts/ResistMono-Regular.woff2') format('woff2'),
+    url('./../fonts/ResistMono-Regular.woff') format('woff');
+}
+
+$p-font-family: 'Regular', sans-serif; //400
+$bold-font-family: 'Medium', sans-serif; //500
+$heading-font-family: 'Regular', sans-serif; //400
+$mono-font-family: 'Mono', sans-serif; //400
 
 $small-font-size: .9rem;
 $regular-font-size: 18px;
 $bigger-font-size: 2rem;
 $large-font-size: 3rem;
 $x-large-font-size: 6rem;
-$huge-font-size: 9vw;
+$huge-font-size: 12vw;
 
 $mobile-large-font-size: 1.5rem;
 $mobile-x-large-font-size: 3rem;
 
-$body-font: 'Thin';
-$heading-font: 'Regular';
-$subheading-font: 'Regular';
+$body-font: $p-font-family;
+$heading-font: $heading-font-family;
+$subheading-font: $p-font-family;
 
 %big-p,
 .big-p {
@@ -84,13 +84,20 @@ $subheading-font: 'Regular';
   }
 }
 
+.bigger-font-size {
+  font-size: $bigger-font-size;
+}
+
+.large-font-size {
+  font-size: $large-font-size;
+}
+
 %heading {
   font-family: $heading-font;
   font-weight: 500;
   line-height: .9;
   margin-top: 0;
   margin-bottom: $section-padding;
-  text-transform: uppercase;
   letter-spacing: -0.05em;
 
   @media #{$mobile} {
@@ -104,6 +111,7 @@ $subheading-font: 'Regular';
   display: inline-block;
   margin-bottom: $spacing;
   font-size: $small-font-size;
+  font-family: $mono-font-family;
 }
 
 @mixin generate-media-query($columns, $item-width) {

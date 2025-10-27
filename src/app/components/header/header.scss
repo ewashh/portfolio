@@ -32,9 +32,18 @@
     }
 
     div {
-      display: grid;
-      grid-auto-flow: column;
-      grid-gap: 1rem;
+      gap: 1rem;
+
+      @media #{$mobile} {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      @media #{$desktop} {
+        display: grid;
+        grid-auto-flow: column;
+      }
     }
   }
 }
@@ -43,12 +52,59 @@
   min-height: 100vh;
   display: grid;
   grid-template-rows: min-content auto;
+  text-align: left;
 
   &__inner {
     padding: calc($section-padding * 2) $section-padding;
 
     @media #{$mobile} {
       padding: calc($section-padding * 2) $section-padding/2;
+    }
+
+    &>div {
+      display: grid;
+      gap: calc($spacing * 2);
+
+      @media #{$desktop} {
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        gap: calc($spacing * 6);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+
+    @media #{$desktop} {
+      aspect-ratio: 3/4;
+    }
+
+    &-caption {
+      display: flex;
+      gap: calc($spacing * 2);
+      justify-content: space-between;
+      width: 100%;
+
+      @media #{$mobile} {
+        align-self: flex-start;
+        background-image: linear-gradient(0deg, transparent 0%, rgba($violet, 0.65) 100%);
+        padding: calc($spacing * 0.95) calc($spacing * 1.25);
+        padding-bottom: 25%;
+        color: $dark;
+      }
+
+      @media #{$desktop} {
+        align-self: flex-end;
+        background-image: linear-gradient(0deg, rgba($violet, 0.65) 0%, transparent 100%);
+        padding: calc($spacing * .75) calc($spacing * 1);
+        padding-top: 50%;
+      }
     }
   }
 
@@ -65,9 +121,15 @@
   }
 
   h1 {
-    font-family: 'Thin';
+    font-family: $heading-font;
     max-width: 10em;
-    justify-self: center;
-    margin-top: calc($spacing * -5);
+    margin-top: -.15em;
+    margin-left: -.08em;
+
+
+    @media #{$mobile} {
+      margin-top: -29vw;
+      padding: 0 calc($spacing * 1.5);
+    }
   }
 }

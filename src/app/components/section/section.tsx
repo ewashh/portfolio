@@ -23,6 +23,7 @@ type SectionProps = {
     style?: 'primary' | 'secondary'
   };
   theme?: 'light' | 'grey' | 'dark';
+  layout?: '1-2' | '1-1';
 };
 
 type DynamicHeadingProps = {
@@ -48,18 +49,21 @@ export default function Section({
   type,
   button,
   theme = 'light',
+  layout
 }: SectionProps) {
   const [isVisible, elementRef] = useAnimateOnScroll();
 
   return (
-    <section className={`section ${type ? `section--${type}` : ''} ${classes ? classes : ''} theme--${theme}`} id={id}>
-      <header className={`animate ${isVisible ? 'animated' : ''}`} ref={elementRef}>
-        {subheading && <span className="subheading">{subheading}</span>}
-        {heading && <DynamicHeading type={headingType} className="section__heading">{heading}</DynamicHeading>}
-        {description && <p className="section__description">{description}</p>}
-        {subtext && <p className="section__subtext">{subtext}</p>}
-        {button && button.text && button.href && <Button text={button.text} hoverText={button.hoverText} href={button.href} type={button.type} style={button.style} />}
-      </header>
+    <section className={`section ${type ? `section--${type}` : ''} ${layout ? `section--${layout}` : ''} ${classes ? classes : ''} theme--${theme}`} id={id}>
+      {(subheading || heading || description || subtext || button) &&
+        <header className={`animate ${isVisible ? 'animated' : ''}`} ref={elementRef}>
+          {subheading && <span className="subheading">{subheading}</span>}
+          {heading && <DynamicHeading type={headingType} className="section__heading">{heading}</DynamicHeading>}
+          {description && <p className="section__description">{description}</p>}
+          {subtext && <p className="section__subtext">{subtext}</p>}
+          {button && button.text && button.href && <Button text={button.text} hoverText={button.hoverText} href={button.href} type={button.type} style={button.style} />}
+        </header>
+      }
 
       {items && (
         <ul className={`section__list animate animate-2 ${isVisible ? 'animated' : ''}`}>
@@ -69,7 +73,7 @@ export default function Section({
         </ul>
       )}
       {children && (
-        <div className={`animate animate-2 ${isVisible ? 'animated' : ''}`} style={{ width: '100%' }}>
+        <div className={`animate ${(subheading || heading || description || subtext || button ? 'animate-2' : '' )} ${isVisible ? 'animated' : ''}`} style={{ width: '100%' }} ref={elementRef}>
           {children}
         </div>
       )}

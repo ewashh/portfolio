@@ -12,7 +12,6 @@ body {
   color: $p-color;
   font-family: $body-font;
   font-size: 18px;
-  text-align: center;
 }
 
 h1,
@@ -28,7 +27,7 @@ h1 {
   max-width: 80vw;
 
   @media #{$mobile} {
-    font-size: 18vw;
+    font-size: 15vw;
   }
 }
 
@@ -50,10 +49,10 @@ h3 {
 }
 
 p {
-  margin: 0 auto;
+  margin: 0;
 
   @media #{$desktop} {
-    max-width: 50vw;
+    max-width: 35em;
   }
 }
 
@@ -122,6 +121,23 @@ iframe {
 
 //Sections
 
+#about {
+  &>div {
+    text-align: left;
+    display: grid;
+    align-items: flex-start;
+    gap: calc($spacing * 6);
+
+    @media #{$desktop} {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    &>p {
+      margin-top: -0.2em;
+    }
+  }
+}
+
 #big-brands {
   h2 {
     span {
@@ -154,29 +170,6 @@ iframe {
   @media #{$desktop} {
     img {
       width: 80vw;
-    }
-  }
-}
-
-#takeout {
-  ul {
-    justify-content: normal;
-  }
-}
-
-#wordpress {
-  ul {
-    @media #{$desktop} {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    li {
-
-      a,
-      video,
-      img {
-        width: 100%;
-      }
     }
   }
 }

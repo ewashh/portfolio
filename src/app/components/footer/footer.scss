@@ -5,10 +5,51 @@
   background-color: $foreground-color;
   color: $background-color;
   min-height: 80vh;
-  display: grid;
   grid-template-rows: auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   h2 {
-    font-family: 'Thin';
+    font-family: $body-font;
+  }
+
+  footer {
+    display: flex;
+    gap: calc($spacing * 2);
+    font-size: $small-font-size;
+    text-transform: uppercase;
+    font-family: $mono-font-family;
+
+    @media #{$mobile} {
+      flex-direction: column;
+      padding: calc($spacing * 2);
+    }
+
+    @media #{$desktop} {
+      justify-content: space-between;
+    }
+
+    a {
+      color: $background-color;
+      text-decoration-color: $violet;
+      text-underline-offset: 3px;
+
+      &:hover {
+        text-decoration-color: $background-color;
+      }
+    }
+
+    div {
+      display: flex;
+      column-gap: 1em;
+      flex-wrap: wrap;
+    }
+  }
+
+  .mobile-block {
+    @media #{$mobile} {
+      flex: 0 0 100%;
+    }
   }
 }
