@@ -74,6 +74,11 @@ $body-font: $p-font-family;
 $heading-font: $heading-font-family;
 $subheading-font: $p-font-family;
 
+.mono {
+  font-family: $mono-font-family;
+  text-transform: uppercase;
+}
+
 %big-p,
 .big-p {
   @media #{$desktop} {
@@ -82,6 +87,10 @@ $subheading-font: $p-font-family;
       font-family: $subheading-font;
     }
   }
+}
+
+.small-font-size {
+  font-size: $small-font-size;
 }
 
 .bigger-font-size {

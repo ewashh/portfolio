@@ -119,6 +119,31 @@ iframe {
   transform: translateY(0);
 }
 
+.tile {
+  padding: calc($spacing * 2);
+  border: $border;
+}
+
+.grid-2 {
+  display: grid !important;
+  gap: calc($spacing * 2);
+  justify-content: flex-start;
+
+  @media #{$desktop} {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.grid-3 {
+  display: grid !important;
+  gap: calc($spacing * 2);
+  justify-content: flex-start;
+
+  @media #{$desktop} {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 //Sections
 
 #about {

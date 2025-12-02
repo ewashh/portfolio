@@ -23,7 +23,7 @@ type SectionProps = {
     style?: 'primary' | 'secondary'
   };
   theme?: 'light' | 'grey' | 'dark';
-  layout?: '1-2' | '1-1';
+  layout?: '1-2' | '1-1' | '1-1-1';
 };
 
 type DynamicHeadingProps = {

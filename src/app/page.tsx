@@ -307,6 +307,35 @@ export default function Home() {
         ]}
       >
       </Section>
+      <Section
+        id="testimonials"
+        heading="Testimonials"
+        theme="grey"
+      >
+        <div className='grid-3'>
+          <div className='tile'>
+            <p>{`"Ewa has joined our team for one of our biggest e-commerce builds to date. She is highly professional when it comes to proactivity, communication and importantly always delivering on time. Ewa is clearly experienced, with deep knowledge of Shopify’s architecture and she is able to lift the platforms capabilities to create great new value. During the project, she is very responsive, takes on feedback positively, and is eager to learn and push herself to grow."`}</p>
+            <br/>
+            <span className='mono'>Adrien Picard - Tech Lead</span>
+            <br/>
+            <a href="https://noplans.studio/" target="_blank">noplans.studio</a>
+          </div>
+          <div className='tile'>
+            <p>{`"Ewa has been the best developer for our Shopify store and custom coding. If you do any custom coding it's important to work with someone like Ewa who will make sure it's done right from the beginning. We made the mistake of working with other developers on here that built code and store that is riddled with coding issues. So you may get something that works at the time but later falls a part, is super slow, unsecure or runs into several issues when making updates/changes. So you end up spending much more time, money, and headaches in the long run. Ewa was able to organize our site/coding and clean things up. She was by far the most knowledgeable developer we worked with. She also is a great designer and can assure the site looks as good as it performs. If you need a pro developer or designer, work with Ewa."`}</p>
+            <br/>
+            <span className='mono'>Thomas Tapp - Founder</span>
+            <br/>
+            <a href="https://tappbrothers.com/" target="_blank">tappbrothers.com</a>
+          </div>
+          <div className='tile'>
+            <p>{`"I've worked with Ewa on many projects, and am always happy with the care and attention she takes. She is great at listening to feedback, but also at suggestions when she has great ideas. 100% would recommend."`}</p>
+            <br/>
+            <span className='mono'>Rachel Wallis - Product Designer</span>
+            <br/>
+            <a href="https://rachel-wallis.com/" target="_blank">rachel-wallis.com</a>
+          </div>
+        </div>
+      </Section>
     </main>
     <Footer/>
     </>
